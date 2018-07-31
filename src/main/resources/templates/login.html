@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>迷你系统登录</title>
+
+    <!--引入js-->
+    <script th:src="@{/static/js/vue.min.js}"></script>
+    <script th:src="@{/static/js/frame/jQuery-2.1.4.min.js}"></script>
+    <script th:src="@{/static/js/frame/bootstrap.min.js}"></script>
+    <script th:src="@{/static/js/login.js}"></script>
+   <!-- <script th:src="@{/static/js/frame/sweetalert2.js}"></script>-->
+    <script th:src="@{/static/js/frame/sweetalert.min.js}"></script>
+
+    <!--引入css-->
+    <link th:href="@{/static/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/static/font-awesome/css/font-awesome.min.css}" rel="stylesheet"/>
+    <link th:href="@{/static/css/bootstrap.button.css}" rel="stylesheet"/>
+    <link th:href="@{/static/css/custom.min.css}" rel="stylesheet"/>
+    <link th:href="@{/static/css/login.css}" rel="stylesheet"/>
+    <!--<link th:href="@{/static/css/sweetalert2.css}" rel="stylesheet"/>-->
+    <link th:href="@{/static/css/sweetalert.css}" rel="stylesheet"/>
+    <link th:href="@{/static/css/animate.css}" rel="stylesheet"/>
+    <!--  <style>
+      </style>-->
+
+</head>
+
+<body style="position:relative;">
+<div class="col-md-6 login_box">
+    <div style="text-align:center">
+        <h2 style="font-size:34px; font-weight:bold;align: center">MiNi</h2>
+    </div>
+    <hr style="border:1px solid #ccc;"/>
+    <form name="loginForm">
+        <div class="input-group username">
+            <span class="input-group-addon" >用户名</span>
+            <input type="text" name="username" id="username" class="form-control" placeholder="请输入用户名" v-model="inputtext.name"
+                   aria-describedby="basic-addon1"/>
+        </div>
+        <div class="input-group password">
+            <span class="input-group-addon" id="basic-addon1">密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
+            <input type="password" id="password" name="password" class="form-control" placeholder="请输入密码" v-model="inputtext.password"
+                   aria-describedby="basic-addon1" autocomplete="off"/>
+        </div>
+        <input type="button" class="button button-raised button-primary button-pill loginbtn" onclick="login()"
+               value="登录"/>
+        <input type="reset" class="button button-raised button-primary button-pill button-highlight resetbtn"
+               value="重置"/>
+    </form>
+</div>
+
+<script>
+    var vm = new Vue({
+        el: '.hello',
+        data: {
+            inputtext:{}
+        },
+        methods: {
+            submit: function() {
+                alert("aaa");
+                console.log(this.inputtext);
+            }
+        },
+    })
+</script>
+
+
+</body>
+
+</html>
